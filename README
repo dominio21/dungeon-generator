@@ -1,0 +1,120 @@
+Dungeon Generator
+🗺️ Introducción al Proyecto
+
+Dungeon Generator es una simulación de exploración de mazmorras (dungeon) basada en texto, implementada en Python.
+
+El objetivo es generar un Mapa proceduralmente complejo y modular donde el Explorador (el jugador) debe navegar, gestionar su salud e interactuar con el Contenido de las habitaciones (Tesoros, Monstruos, Jefes y Eventos) para encontrar y derrotar al Jefe Final.
+
+El diseño modular del proyecto separa claramente la generación de mapas, la lógica del personaje (Explorador) y la definición de interacciones (Contenido).
+🛠️ Requisitos e Instalación
+Requisitos del Sistema
+
+    Python: Versión 3.8 o superior.
+
+    Gestor de Paquetes: pip.
+
+Dependencias
+
+Este proyecto utiliza la librería rich para mejorar la visualización en la consola con colores y paneles.
+
+pip install rich
+
+
+Clonación e Inicio
+
+    Clonar el Repositorio:
+
+    git clone [https://github.com/dominio21/dungeon-generator.git](https://github.com/dominio21/dungeon-generator.git)
+    cd dungeon-generator
+
+
+    Ejecutar el Juego:
+    Asegúrate de estar en la carpeta raíz del proyecto (dungeon-generator) antes de ejecutar:
+
+    python main.py
+
+
+🏗️ Estructura del Código
+
+Archivo/Carpeta
+	
+
+Descripción
+
+pyproject.toml
+	
+
+Archivo de configuración central (dependencias, herramientas de desarrollo).
+
+main.py
+	
+
+Punto de entrada del juego. Inicializa el mapa y ejecuta el bucle principal de interacción.
+
+dungeon_generator/
+	
+
+Módulo principal del proyecto, contiene todas las clases lógicas.
+
+├── mapa.py
+	
+
+Lógica para la generación procedural de la estructura del dungeon.
+
+├── habitacion.py
+	
+
+Define las propiedades y conexiones de cada celda del mapa.
+
+├── explorador.py
+	
+
+Contiene la lógica del personaje (movimiento, vida, inventario).
+
+├── contenido.py
+	
+
+Clases base y subclases para todas las interacciones (Monstruo, Tesoro, Evento, Jefe).
+
+└── objeto.py
+	
+
+Clase base para los ítems que puede recolectar el explorador.
+🎮 Comandos de Interacción
+
+Durante el juego, el Explorador puede usar los siguientes comandos para tomar decisiones:
+
+Comando
+	
+
+Función
+
+NORTE / SUR / ESTE / OESTE
+	
+
+Moverse a una habitación adyacente, si existe una conexión.
+
+EXPLORAR
+	
+
+Activar la interacción con el contenido actual de la habitación (combate, trampa, obtener tesoro, etc.).
+
+MAPA
+	
+
+Muestra el estado del mapa conocido y tu ubicación actual.
+
+ESTADO
+	
+
+Muestra la vida actual, la posición y el contenido del inventario.
+
+GUARDAR
+	
+
+Guarda una instantánea del estado actual del juego.
+
+SALIR
+	
+
+Termina la sesión de juego.
