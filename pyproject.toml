@@ -1,0 +1,14 @@
+
+
+[project]
+name = "dungeonmapa-project"  # (Opcional) Cambia el nombre del proyecto si quieres.
+version = "0.1.0"
+description = "Tarea 1 - Generador de Mapas de Dungeon (DungeonMapa)"
+dependencies = [
+    "rich",
+    "PyYAML",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dungeonmapa"]
